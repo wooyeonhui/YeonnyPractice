@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!--
+     float
+     1. 공중에 붕뜬다
+     2. float이 선언된 엘리먼트(요소)는 컨텐츠가 피해간다
+     3.플룻이 선언된 엘리먼트는 먼저작성된 엘리먼트보다 위로 뜰수 없다
+
+     width : auto
+     height : auto  ㅡㅡ 여기서 깨진다
+
+     overflow:hiddem
+              visible
+              scroll
+
+      -->
+      <style >
+      .container{
+        width:540px;
+        border:1px solid gray;
+        margin:auto;
+      }
+
+
+       header{
+         border-bottom: 1px solid gray;
+       }
+       nav, article, aside{
+         border: 1px solid gray;
+       }
+       nav{
+         float: left;
+         width:120px;
+         border-right:1px solid gray;
+       }
+       article{
+         float: left;
+         width: 300px;
+         border-left: 1px solid gray;
+         margin-left:-1px;
+       }
+       aside{
+         float:right;
+         width:115px;
+         height: 500px;
+         border-left: 1px solid gray;
+         margin-left:-1px;
+       }
+       footer{
+         clear: both;
+         border-top: :1px solid gray;
+         text-align: center;
+         padding: 20px;
+       }
+
+
+      </style>
+
+  <title>article</title>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+        <h1>
+          CSS
+        </h1>
+    </header>
+
+    <nav>
+     <ul>
+       <li>position</li>
+       <li>float</li>
+       <li>flex</li>
+       <li>position</li>
+       <li>float</li>
+       <li>flex</li>
+       <li>position</li>
+       <li>float</li>
+       <li>flex</li>
+       <li>position</li>
+       <li>float</li>
+       <li>flex</li>
+     </ul>
+   </nav>
+      <article >
+       <h2>
+        float
+       </h2>
+
+         블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라블라블르르라라
+
+       </article>
+       <aside >
+                ad
+       </aside>
+       <footer>
+                copy right
+       </footer>
+    </div>
+
+
+
+
+
+
+</body>
+</html>

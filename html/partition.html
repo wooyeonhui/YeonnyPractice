@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+<style>
+
+
+.wrapper{
+  display:inline-block;
+  position:relative;
+  left:50%;
+  margin-left:-345px;
+
+}
+.a{position: relative;
+left:0;
+top:0;
+width:100px;
+height:150px;
+background-color:#E5ECE5;
+border-right:10px solid black;
+border-bottom:10px solid black;
+}
+.b{position: relative;
+left:0;
+top:0;
+background-color:#E5ECE5;
+width:100px;
+height:300px;
+border-right:10px solid black;
+border-top:10px solid black;
+border-bottom:10px solid black;
+}
+.c{position: relative;
+left:0;
+top:0;
+width:100px;
+height:100px;
+background-color:#0E3B98;
+}
+.c:hover{
+  animation:rotatebox 3s;}
+@keyframes rotatebox{
+  transform:rotate(1000deg)}
+
+.d:hover{
+  background-color:#fff;
+  transition:1s;
+}
+/* 빨강 주인공 */
+.d{position: absolute;
+left:110px;
+top:0;
+width: 580px;
+height:580px;
+background-color:#CB0101; }
+
+.e{position: absolute;
+left:100px;
+top:470px;
+height:100px;
+width:500px;
+border-left:10px solid black;
+border-top:10px solid black;
+background-color:#E5ECE5;}
+.f{position: absolute;
+  top:470px;
+  left:610px;
+  width:70px;
+  height:50px;
+  border-top:10px solid black;
+  border-left:10px solid black;
+  background-color:#E5ECE5;
+  /* outline:1px red solid; */
+}
+.g:hover{
+  transition:1s;
+  width:580px;
+  height:580px;
+  position:absolute;
+  top:0;
+  left:0;
+}
+.g{position: absolute;
+top:530px;
+left:610px;
+  width:70px;
+  height:50px;
+  border-top:10px solid black;
+  border-left:10px solid black;
+  background-color:  left:618px;
+  width:70px;
+  height:43px;
+  border-top:10px solid black;
+  border-left:10px solid black;
+  background-color:#D7E156;
+}
+</style>
+  <title>JS Bin</title>
+</head>
+<body>
+<div class="wrapper">
+ <div class="line1">
+  <div class="a">text1</div>
+  <div class="b">text2</div>
+  <div class="c">text3</div>
+ </div>
+  <div class="line2">
+   <div class="d">text4</div>
+   <div class="e">text5</div>
+   <div class="f">text6</div>
+   <div class="g">text7</div>
+ </div>
+</div>
+</body>
+</html>

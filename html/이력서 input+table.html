@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>이력서 input+table</title>
+</head>
+<body>
+  <h1>
+    이력서
+  </h1>
+
+  <table border="1" width="100%">
+    <colgroup>
+       <col width="50"/>
+       <col width="150"/>
+       <col width="50"/>
+       <col width="150"/>
+       <col width="50"/>
+       <col width="100"/>
+    </colgroup>
+    <tr>
+      <th><label for="name">이름</label> </th>
+      <td><input type="text" id="name" placeholder="000"></td>
+      <th><label for="englishname">영문</label></th>
+      <td><input type="text" id="englishname"></td>
+      <th><label for="chinaname">한문</label></th>
+      <td><input type="text" id="chinaname"></td>
+    </tr>
+    <tr>
+      <th><label for="idnumber">주민번호</label></th>
+      <td colspan="3"><input type="text" id="idnumber">-<input type="text" name="idnumber"></td>
+      <th><label for="age">나이</label></th>
+      <td><input type="text" id="age"></td>
+    </tr>
+    <tr>
+      <th>휴대폰</th>
+      <td colspan="2"><input type="text" name="phonnumber"placeholder="000">-<input type="text" name="phonnumber"placeholder="000">-<input type="text" name="phonnumber"placeholder="000"></td>
+      <th>전화번호</th>
+      <td colspan="2"><input type="text" name="phonnumber"placeholder="00">-<input type="text" name="phonnumber"placeholder="000">-<input type="text" name="phonnumber"placeholder="000"></td>
+
+    </tr>
+    <tr>
+      <th><label for="email">E-mail</label></th>
+      <td><input type="text" id="email" placeholder="abc">@
+         <select>
+           <option>naver.com</option>
+           <option>gmail.com</option>
+           <option>daum.com</option>
+           <option>hotmail.com</option>
+         </select>
+       </td>
+      <th><label for="sns">SNS</label></th>
+      <td colspan="3"><input type="text" id="sns" placeholder="Blog/Twittwe/Facebook"></td>
+
+    </tr>
+    <tr>
+      <th><label for="adress">주소</label></th>
+      <td colspan="5"><input type="text" id="adress" placeholder="00시00구00동000-00번지"></td>
+
+    </tr>
+
+  </table>
+<br />
+   <table border="1" width="100%">
+
+     <tr>
+       <th colspan="4">학력사항(최종학력:00대학교(4년)졸업)</th>
+     </tr>
+     <tr>
+       <th>계약기간</th>
+       <th>학교명 및 전공</th>
+       <th>학점</th>
+       <th>구분</th>
+     </tr>
+     <tr>
+       <th><input type="text" name="name" placeholder="0000.00.00"></th>
+       <th><input type="text" name="name" placeholder="00">학교
+           <input type="text" name="name" placeholder="00">학과
+        </th>
+       <th><input type="text" name="name" value=""></th>
+       <th><input type="text" name="name" placeholder="졸업"></th>
+     </tr>
+     <tr>
+       <th><input type="text" name="name" placeholder="0000.00.00"></th>
+       <th><input type="text" name="name" placeholder="00고등학교"></th>
+       <th><input type="text" name="name" placeholder=""></th>
+       <th><input type="text" name="name" placeholder=""></th>
+     </tr>
+     <!-- <input type="text" name="name" placeholder=""> -->
+     <tr>
+       <th><input type="text" name="name" placeholder=""></th>
+       <th><input type="text" name="name" placeholder=""> </th>
+       <th><input type="text" name="name" placeholder=""> </th>
+       <th><input type="text" name="name" placeholder=""></th>
+     </tr>
+   </table>
+<br />
+   <table border="1" width="100%">
+
+     <tr>
+       <th colspan="4">활동사항</th>
+     </tr>
+     <tr>
+       <th>계약기간</th>
+       <th>활동내용</th>
+       <th>활동구분</th>
+       <th>기관 및 장소</th>
+     </tr>
+     <tr>
+       <th><input type="text" name="name" placeholder=""></th>
+       <th><input type="text" name="name" placeholder=""></th>
+       <th><input type="text" name="name" placeholder=""></th>
+       <th><input type="text" name="name" placeholder=""></th>
+     </tr>
+     <tr>
+       <th><input type="text" name="name" placeholder=""></th>
+       <th><input type="text" name="name" placeholder=""></th>
+       <th><input type="text" name="name" placeholder=""></th>
+       <th><input type="text" name="name" placeholder=""></th>
+     </tr>
+     <tr>
+       <th><input type="text" name="name" placeholder=""></th>
+       <th><input type="text" name="name" placeholder=""></th>
+       <th><input type="text" name="name" placeholder=""></th>
+       <th><input type="text" name="name" placeholder=""></th>
+     </tr>
+   </table>
+<br />
+      <table border="1" width="100%">
+
+        <tr>
+          <th colspan="4">어학</th>
+        </tr>
+        <tr>
+          <th>언어</th>
+          <th>시험</th>
+          <th>점수</th>
+          <th>기관 및 장소</th>
+        </tr>
+        <tr>
+          <th><input type="text" name="name" placeholder=""></th>
+          <th><input type="text" name="name" placeholder=""></th>
+          <th><input type="text" name="name" placeholder=""></th>
+          <th><input type="text" name="name" placeholder=""></th>
+        </tr>
+        <tr>
+          <th><input type="text" name="name" placeholder=""></th>
+          <th><input type="text" name="name" placeholder=""></th>
+          <th><input type="text" name="name" placeholder=""></th>
+          <th><input type="text" name="name" placeholder=""></th>
+        </tr>
+        <tr>
+          <th><input type="text" name="name" placeholder=""></th>
+          <th><input type="text" name="name" placeholder=""></th>
+          <th><input type="text" name="name" placeholder=""></th>
+          <th><input type="text" name="name" placeholder=""></th>
+        </tr>
+      </table>
+<br />
+         <table border="1" width="100%">
+
+           <tr>
+             <th colspan="3">교육/연수</th>
+           </tr>
+           <tr>
+             <th>기간</th>
+             <th>과정명</th>
+             <th>기관</th>
+
+           </tr>
+           <tr>
+             <th><input type="text" name="name" placeholder=""></th>
+             <th><input type="text" name="name" placeholder=""></th>
+             <th><input type="text" name="name" placeholder=""></th>
+           </tr>
+           <tr>
+             <th><input type="text" name="name" placeholder=""></th>
+             <th><input type="text" name="name" placeholder=""></th>
+             <th><input type="text" name="name" placeholder=""></th>
+           </tr>
+           <tr>
+             <th><input type="text" name="name" placeholder=""></th>
+             <th><input type="text" name="name" placeholder=""></th>
+             <th><input type="text" name="name" placeholder=""></th>
+           </tr>
+         </table>
+
+
+</body>
+</html>

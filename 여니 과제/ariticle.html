@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+
+  .wrapper{
+    width: 900px;
+    height: 540px;
+    margin:auto;
+  }
+  .header{
+    width:840px;
+    height:111px;
+    margin:0 auto;
+    margin-bottom:-5px;
+  }
+  #line{
+    border-width:2px;
+    margin:5px 30px 15px 30px;
+    border-color:gray;
+    border-style:solid;
+  }
+  .hl{
+    float:left;
+    margin:20px 0 0 ;
+  }
+  .hlc{
+    clear:left;
+  }
+  .hlc input{
+    display:inline-block;
+    float:left;
+    margin-right:10px;
+  }
+  .ban{
+    float:right;
+    margin-top:40px;
+
+  }
+  .content{
+    width: 840px;
+    height:380px;
+    margin:0 auto;
+  }
+
+  /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+  .side{
+    width: 90px;
+    height:380px;
+    float:left;
+    outline: 1px solid #ccc;
+  }
+  .weat{
+  height:26px;
+  }
+  .s-up{
+  margin-top:-10px;
+  }
+  .s-dow{
+  margin-top:17px;
+  }
+  #ss{
+  font-size:12px;
+  font-weight:bold;
+  color:#1197CA
+  }
+  #ss-i{
+  width:78px;
+  height:87px;
+  margin:0 auto;
+  }
+  #ss-i img{
+  width:78px;
+  height:87px;
+  margin:0 auto;
+  }
+  #ss-t{
+  margin-top:4px;
+  line-height:16px;
+  font-size:12px;
+  }
+  #ss{
+  font-size:12px;
+  font-weight:bold;
+  color:#1197CA
+  }
+  #ch{
+  font-size:12px;
+  font-weight:bold;
+  color:#1197CA
+  }
+  #ch-i{
+  width:78px;
+  height:87px;
+  margin:0 auto;
+  }
+  #ch-i img{
+  width:78px;
+  height:87px;
+  margin:0 auto;
+  }
+  #ch-t{
+  margin-top:4px;
+  line-height:16px;
+  font-size:12px;
+  }
+  /*ㅡㅡㅡㅡㅡㅡㅡㅡ사이드*/
+  .left{
+    width:540px;
+    height:380px;
+    float:left;
+    margin-left:5px;
+  }
+  .l-up{
+  width:540px;
+  height:199px;
+  }
+  .l-up1{
+  width:353px;
+  height:199px;
+  float:left;
+  overflow:hidden;
+  }
+  .l-up1 img{
+    width:353px;
+   height:199px;
+  }
+  .l-up1{
+  position:relative;
+}
+.lupab1{
+  position:absolute;
+  top:100px;
+}
+.lupab1 p{
+  font-size:25px;
+  color:white;
+}
+
+  .l-up2{
+  width:172px;
+  height:97px;
+  float:right;
+  overflow:hidden;
+  }
+  .l-up2 img{
+  width:172px;
+  height:97px;
+  float:right;
+  overflow:hidden;
+  }
+  .l-up3{
+  width:172px;
+  height:97px;
+  float:right;
+  margin-top:5px;
+  overflow:hidden;
+  }
+  .l-up3 img{
+  width:172px;
+  height:97px;
+  float:right;
+  overflow:hidden;
+  }
+  .l-dow{
+    width:540px;
+    height:172px;
+    margin-top:-7px;
+    outline: 1px solid #ccc;
+  }
+  .l-dh{
+    width:540px;
+    height:24px;
+    background-color:#1197CA;
+  }
+  .l-dl{
+    width:245px;
+    height:139px;
+    margin:0;
+    float:left;
+  }
+  .l-dlup{
+    width:223px;
+    height:56px;
+
+    margin:0 auto;
+    margin-top:10px;
+    margin-bottom:10px;
+  }
+  .l-dlupi{
+    width:100px;
+    height:56px;
+    overflow:hidden;
+    float:left;
+  }
+  .l-dlupi img{
+    width:100px;
+    height:56px;
+    overflow:hidden;
+    float:left;
+  }
+  .l-dh ul li{
+    list-style:none;
+    display:inline;
+    font-size:13px;
+    color:white;
+  }
+  .l-dlup p{
+    font-size:13px;
+    margin-top:-0px;
+  }
+
+  .l-dldowi{
+    width:100px;
+    height:56px;
+    overflow:hidden;
+    float:left;
+  }
+  .l-dldowi img{
+    width:100px;
+    height:56px;
+    float:left;
+  }
+  .l-dldow p{
+    font-size:13px;
+    margin-top:-0px;
+  }
+  .l-dldow{
+    width:223px;
+    height:56px;
+
+    margin:0 auto;
+  }
+  .l-dr{
+    width:285px;
+    height:148px;
+    margin-left:255px;
+  }
+  .l-dr ul{
+    margin:0px;
+  }
+  .l-dr ul li{
+     margin-left:-10px;
+    font-size:13px;
+    line-height:20px;
+  }
+  #impact{
+    font-weight:bold
+  }
+  .right{
+    width: 200px;
+    height:380px;
+    float:right;
+  }
+  .r-up{
+    width:200px;
+    height:200px;
+
+    outline:1px solid #ccc;
+  }
+  .r-up ul{
+    list-style:none;
+    margin:0 0 0 -25px;
+  }
+  .r-up ul li{
+    font-size:12px;
+    line-height:20px
+  }
+  .r-up span{
+    color:#1197CA;
+  }
+  .r-dow{
+    width:200px;
+    height:171px;
+    margin-top:9px;
+    outline: 1px solid #ccc;
+  }
+  .r-dowi{
+    width:200px;
+    height:100px;
+    overflow:hidden;
+  }
+  .r-dowi img{
+    width:200px;
+    height:200px;
+  }
+  #r-dowi1{
+    margin-top:-1px;
+    margin-left:5px;
+    font-size:14px;
+    font-weight:bold;
+  }
+  #r-dowi2{
+    margin-top:-7px;
+    margin-left:5px;
+    font-size:13px;
+    color:gray;
+  }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="hl"><img src="http://static.naver.net/newsstand/up/2013/0813/nsd11419129.gif" alt=""></div>
+      <div class="ban"><img src="http://adcreative.naver.com/ad3/1004/1004874/468_60_01473227375503.jpg" alt=""></div>
+      <div class="hlc">
+        <input type="button" value="▼구독하기">
+        <input type="button" value="이용자한마디">
+        <input type="button" value="숑">
+        <span><p>11-18 13:19 편집</p></span>
+      </div>
+    </div>
+<hr id="line"/>
+    <div class="content">
+      <div class="side">
+       <!--  동영상 이미지 떼오는방법 -->
+        <div class="logo">img</div>
+        <div class="weat">img</div>
+        <div class="s-up">
+          <p id="ss">생생영상</p>
+          <div id="ss-i"><img src="http://static.naver.net/newsstand/2016/1118/sbs/144348/004.jpg" alt="">
+          </div>
+          <p id="ss-t">"한 번 붙어봅시다" 예산 삭감 </p>
+        </div>
+        <div class="s-dow">
+          <p id="ch">생생영상</p>
+          <div id="ch-i"><img src="http://static.naver.net/newsstand/2016/1118/sbs/144348/006.jpg" alt="">
+          </div>
+          <p id="ch-t">"한 번 붙어봅시다" 예산 삭감 </p>
+        </div>
+      </div>
+
+      <div class="left">
+         <div class="l-up">
+           <div class="l-up1">
+             <img src="http://img.sbs.co.kr/newimg/news/20161111/200995361_700.jpg" alt="http://news.sbs.co.kr/news/endPage.do?news_id=N1003893842&plink=STAND&cooper=NAVER">
+              <div class="lupab1"><p>충격에빠진 이대 교수들 "미치지 않고서야..."</p></div>
+           </div>
+           <div class="l-up2"><img src="http://static.naver.net/newsstand/2016/1118/sbs/144348/008.jpg" alt="http://news.sbs.co.kr/news/endPage.do?news_id=N1003894724&plink=STAND&cooper=NAVER"></div>
+           <div class="l-up3"><img src="http://static.naver.net/newsstand/2016/1118/sbs/144348/009.jpg" alt="http://news.sbs.co.kr/news/endPage.do?news_id=N1003895428&plink=STAND&cooper=NAVER"></div>
+         </div>
+
+         <div class="l-dow">
+           <div class="l-dh">
+             <ul>
+               <li>조성진의 1년, 어떤 변화가 있었을까</li>
+               <li>l '트럼플레이션' 공포에 휩싸인 세계 경제</li>
+             </ul>
+           </div>
+           <div class="l-dl">
+             <div class="l-dlup">
+                <div class="l-dlupi"><img src="http://static.naver.net/newsstand/2016/1118/sbs/144348/006.jpg" alt="http://news.sbs.co.kr/news/endPage.do?news_id=N1003895025&plink=STAND&cooper=NAVER"></div>
+            <p>6천억 원이 사라졌다…靑-삼성 '수상한 거래'
+</p>
+             </div>
+             <div class="l-dldow">
+                 <div class="l-dldowi"><img src="http://static.naver.net/newsstand/2016/1118/sbs/144348/006.jpg" alt="http://news.sbs.co.kr/news/endPage.do?news_id=N1003895025&plink=STAND&cooper=NAVER"></div>
+            <p>6천억 원이 사라졌다…靑-삼성 '수상한 거래'
+</p>
+             </div>
+           </div>
+           <div class="l-dr">
+             <ul>
+               <li id="impact">靑 "추미애 계엄령 발언, 무책임한 정치적</li>
+               <li>軍 대공화기 탄환이 지붕 뚫고 사무실 책상에 '꽝</li>
+               <li id="impact">"기억 안 나" 버티는 이영복 입만 쳐다보</li>
+               <li>'세월호 7시간' 앞둔 '그것이 알고 싶다'가 구</li>
+               <li id="impact">떨어지는 아기 받아낸 9살 형…엄청난 순</li>
+               <li>'촛불 바람불면 꺼진다' 말에…소설가 이외수</li>
+             </ul>
+            <!--  박스끝을 넘어가는놈을 ...시키는 방법은? -->
+           </div>
+         </div>
+      </div>
+
+      <div class="right">
+        <div class="r-up">
+          <ul>
+            <li><span>[사회]</span>친딸 성폭행에 몰카까지…50대 항소심도 징역 12년</li>
+            <li><span>[국제]</span>죽음 앞둔 배에 강제로 태워 몰살…잔혹한 난민선</li>
+            <li><span>[정치]</span>대통령 조사 시기 놓쳤다…"혐의 입증 차질"</li>
+            <li><span>[연예]</span>나비 "장동민과 결별 맞다. 자연스럽게 소원해져"</li>
+            <li><span>[연예]</span>"악귀 쫓으려고"…세뇌당해 여동생 살해한 오빠</li>
+          </ul>
+        </div>
+        <div class="r-dow">
+          <div class="r-dowi"><img src="http://img.sbs.co.kr/newsnet/etv/upload/2016/11/18/30000554659_700.jpg" alt=""></div>
+          <p id="r-dowi1">토니안"한밤중 바닥에 쿵"..아찡했던 순간</p>
+          <p id="r-dowi2">'미운오리새끼'토니안이 한밤...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
