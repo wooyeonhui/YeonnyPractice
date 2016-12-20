@@ -1,0 +1,26 @@
+// 익명함수
+var over = function(){
+  $(this).css('background','red');
+}
+
+var out = function(){
+  $(this).css('background','initial');
+}
+
+var scorllEvent = function(){
+      var idx = $(this).index();
+      var sot = $('.content section').eq(idx).offset().top;
+      $('html,body').stop().animate({
+          scrollTop:sot
+      },500)
+
+      return false;
+  }
+
+//문서 준비
+$(function(){
+  $('nav li')
+  .mouseenter(over)
+  .mouseleave(out)
+  .click(scorllEvent)
+})
