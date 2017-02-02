@@ -1,0 +1,54 @@
+2-02
+
+conn system/1234;
+create user scott identified by tiger;
+grant connect, resource to scott;
+
+conn scott/tiger
+
+--sql 파일 불러서 실행시키기
+@C:\Users\Administrator\Desktop\여니연습\DataBase\data.sql
+
+--그 계정에 속한 테이블 확인하기
+select*from tab;
+
+select*from tabs;
+
+sql plus 라인의 크기 - 한 라인에 나올 컬럼의 수 정하기
+set linesize 500
+
+--테이블 구조를 확인하는 명령어
+desc 테이블명
+;
+desc tab;
+
+primary key(주키)
+- 테이블내에서 특정필드 하나 또는 여러개의 필드를 묶어서 값이 null이
+아니고 유일한 값을 가질 수 있을때 primary key로 선언 할 수 있다.
+(무결성)
+
+--각종 제약조건(primary key가 존재하는지 확인하는 명령어)
+select constraint_name from user_constraints;
+
+--부서에 데이타 넣기
+insert into dept(deptno, dname, loc) values(10,'개발1부','서울');
+
+ERROR at line 1:
+ORA-00001: unique constraint (SYSTEM.PK_DEPT) violated
+
+primary key
+foreign key
+ - 외부 테이블의 primary key를 참조할 때 이를 foreign key라고 한다
+   ex) emp 테이블의 deptno 필드는 부서 번호를 저장하기 위한 필드이다.
+       이때 부서번호는 dept 테이블에 존재하는 부서번호에 한정해서 저장해야하는
+       관계가 형성될때 이를 foreign key로 지절할 수 있다.
+       다른테이블의 데이타를 참조해야 할 경우에 지정할 수 있다.
+        emp
+       다른 테이블의 primary key 내에서만 데이타가 존재해야 할때
+       foreign key를 지정한다 그러면 데이타 추가시 오류를 잡아낸다
+
+       insert into emp(empno,ename,deptno)values(8000,'허준',50);
+
+       *
+ERROR at line 1:
+ORA-02291: integrity constraint (SCOTT.FK_DEPTNO) violated - parent key not found

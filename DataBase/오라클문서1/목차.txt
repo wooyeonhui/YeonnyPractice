@@ -1,0 +1,252 @@
+
+제1장 관계형 데이터베이스
+1. 관계형 데이터베이스의 개념
+1.1 관계형 모델의 구성요소
+1.2 관계형 데이터베이스 기능
+1.3 관계형 데이터베이스의 정리
+1.4 관계 데이터베이스에서 사용하는 용어
+1.5 다중 테이블 관계
+1.6 관계형 데이터베이스의 속성
+1.7 SQL문장
+2. ORACLE 관계형 데이터베이스 관리 시스템
+2.1 완전한 ORACLE 솔루션
+3. SQL, SQL*Plus, PL/SQL
+3.1 SQL
+3.2 SQL*Plus
+3.3 PL/SQL(Procedural Language/SQL)
+제 2 장 데이터의 검색
+1. 기본적인 SELECT문 사용법
+1.1 SQL SELECT 문장의 성능
+1.2 Syntax
+1.3 SQL 문장 작성법
+1.4 SQL 문장 실행
+1.5 모든 열 선택
+1.6 특정 Column 선택
+1.7 Column의 출력 형태
+1.8 산술 표현식
+1.9 Null값의 처리
+1.10 NVL 함수
+1.11 열에 별칭(Alias) 부여
+1.12 연결 연산자 
+1.13 LITERAL 문자 STRING
+1.14 중복 행의 제거
+제3장 데이터 제한과 정렬 
+1. 특정 행의 검색 
+1.1 Syntax 
+1.2 WHERE절에 사용되는 연산자 
+2. ORDER BY절 
+2.1 Syntax 
+2.2 데이터의 정렬 
+2.3 다중 열에 의한 정렬 
+4장 단일 행 함수 
+1. SQL 함수 
+1.1 SQL함수의 특징 및 이점 
+1.2 단일 행 함수(Single Row Function) 
+1.3 문자형 함수(Character Function) 
+1.4 숫자형 함수 
+1.5 날짜형 함수 
+1.6 변환 함수 
+1.7 기타 함수 
+1.8 중첩 함수 
+제5장 그룹 함수(Multi Row Function) 
+1. 그룹 함수 
+1.1 그룹 함수의 종류 
+1.2 그룹 함수 사용 
+1.3 데이터 그룹 생성 
+제6장 다중 테이블로부터 데이터 검색 
+1. Join 
+1.1 Syntax 
+1.2 Join의 종류 
+1.3 Cartesian Product 
+1.4 Equijoin 
+1.5 NonEquijoin 
+1.6 Outer Join 
+1.7 Self Join 
+1.8 Set Operators 
+제7장 서브쿼리(SUBQUERY) 
+1. SUBQUERY 
+1.1 SUBQUERY의 개념 
+1.2 Syntax 
+1.3 SUBQUERY를 사용할 수 있는 절 
+1.4 SUBQUERY의 유형 
+1.5 단일 행 SUBQUERY 
+1.6 다중 행 SUBQUERY 
+1.7 다중 열 SUBQUERY 
+1.8 SUBQUERY에서의 NULL값 
+1.9 FROM절에서의 SUBQUERY 
+제8장 SQL*Plus 명령어 
+1 SQL*Plus 명령어 
+1.1 SQL과 SQL*Plus 의 차이점 
+1.2 SQL명령 편집 및 실행 
+1.3 SQL*Plus를 이용하여 보고서 작성 
+1.4 상호작용 리포트 
+
+제9장 테이블(TABLE) 생성 
+1. 테이블 생성 
+1.1 ORACLE에서 사용하는 객체 
+1.2 제약 조건 
+1.3 테이블 차트에 의한 테이블 생성 
+1.4 SUBQUERY을 사용한 테이블 생성 
+1.5 데이터 사전(DATA DICTIONARY) 질의 
+2. 테이블을 수정 
+2.1 새로운 열 추가 
+2.2 열 수정 
+2.3 제약 조건 추가 
+2.4 제약 조건 삭제 
+2.5 제약 조건 비활성화 
+2.6 제약 조건 활성화 
+2.7 제약 조건 조회 
+2.8 객체 이름 변경 
+2.9 TRUNCATE TABLE문장 
+2.10 테이블에 주석문 추가 
+3. 테이블 삭제 
+3.1 Syntax 
+
+제10장 데이터 조작 
+1. 데이터(DML) 조작어 
+1.1 INSERT 문장 
+1.2 UPDATE 문장 
+1.3 DELETE 문장 
+1.4 데이터베이스 TRANSACTION 
+1.5 읽기 일관성 
+1.6 Locking 
+
+제11장 SEQUENCE 
+1. SEQUENCE 
+1.1 SEQUENCE 특징 
+1.2 Syntax 
+1.3 SEQUENCE 학인 
+1.4 SEQUENCE 사용법 
+1.5 SEQUENCE 값 CACHE 
+1.6 SEQUENCE에서 간격의 경계 
+1.7 SEQUENCE 수정 
+1.8 SEQUENCE 제거 
+
+제12장 VIEW 
+1. VIEW의 개념 
+1.1 VIEW의 장점 
+1.2 VIEW의 종류 
+1.3 VIEW의 생성 
+1.4 VIEW의 구조 및 이름 확인 
+1.5 데이터 액세스 VIEW 
+1.6 복합 VIEW 생성 
+1.7 VIEW에서 DML연산 수행 
+1.8 WITH CHECK OPTION절 사용 
+1.9 DML연산 부정 
+1.10 VIEW의 제거 
+
+제13장 인덱스(INDEX) 
+1. 인덱스(INDEX)의 개요 
+1.1 인덱스의 특징 
+1.2 인덱스 생성 방법 
+1.3 인덱스의 종류 
+1.4 사용자가 인덱스 생성 
+1.5 인덱스 생성 확인 
+1.6 인덱스 제거 
+2. 동의어 
+2.1 Syntax 
+2.2 동의어 삭제 
+
+제14장 사용자 접근 제어 
+1. 사용자 접근 제어 
+1.1 데이터베이스 보안의 두 범주 
+1.2 사용자 생성 
+1.3 권한 
+1.4 ROLE의 개념 
+
+제15장 PL/SQL 개요 
+1. PL/SQL 개요 
+1.1 PL/SQL의 장점 
+1.2 PL/SQL Block 구조 
+1.3 SQL*Plus로 하는 일 
+
+제16장 변수 사용
+1. 변수 
+1.1 변수 사용 
+1.2 PL/SQL에서 변수 처리 
+1.3 변수 유형 
+1.4 PL/SQL 변수 선언 
+1.5 이름 지정 규칙 
+1.6 변수의 값 지정 
+1.7 스칼라 데이터 형 
+1.8 조합 데이터 형(Composite Datatype) 
+1.9 LOB Datatype 변수 
+1.10 바인드 변수 
+1.11 NonPL/SQL 변수 참조 
+2. PL/SQL 블록 
+2.1 PL/SQL 블록 구문과 지침
+2.2 데이터형 변환 
+2.3 중첩 블록과 변수 범위 
+2.4 PL/SQL에서 연산자 
+2.5 프로그래밍 지침 사항 
+
+제17장 PL/SQL에서 사용 가능 한 SQL문장 
+1. PL/SQL에서 SQL문장 
+1.1 PL/SQL에서 SQL문장 사용 
+1.2 PL/SQL에서 SELECT문장 
+1.3 PL/SQL을 이용한 데이터 조작 
+1.4 이름 지정 규약 
+1.5 COMMIT과 ROLLBACK 문장 
+1.6 SQL CURSOR 
+
+제18장 PL/SQL의 제어 구조 
+1. 개요 
+1.1 IF문 
+1.2 논리적 조건 설정 
+1.3 LOOP문 
+1.4 BASIC LOOP문 
+1.5 EXIT 문 
+1.6 FOR LOOP문 
+1.7 WHILE LOOP문 
+1.8 중첩 LOOP와 레이블 
+제19장 CURSOR 
+1. 커서의 개념 
+1.1 CURSOR의 종류 
+1.2 명시적 CURSOR의 제어 
+1.3 DECLARE CURSOR 
+1.4 OPEN CURSOR 
+1.5 FETCH CURSOR 
+1.6 CLOSE CURSOR 
+1.7 명시적 CURSOR의 속성 
+1.8 복수 인출(FETCH) 제어 
+1.9 CURSOR와 RECORD 
+1.10 CURSOR와 FOR LOOP 
+
+1.11 SUBQUERY를 사용한 CURSOR FOR LOOP 
+
+제20장 고급 명시적 CURSOR 
+1. 매개변수와 CURSOR 
+1.1 Syntax 
+1.2 FOR UPDATE절 
+1.3 WHERE CURRENT OF절 
+1.4 SUBQUERY 
+
+제21장 예외처리 
+1. PL/SQL로 예외 처리 
+1.1 예외 처리란 
+1.2 예외를 발생시키는 두 가지 방법 
+1.3 예외 처리 
+1.4 예외의 유형 
+1.5 예외 정의 
+1.6 미리 정의된 ORACLE SERVER 에러 
+1.7 미리 정의되지 않은 ORACLE SERVER 에러 
+1.8 사용자 정의 예외 
+1.9 예외 트래핑 함수 
+1.10 RAISE_APPLICATION_ERROR 
+
+제22장 BUILD PL/SQL SUBPROGRAMS 
+1. SUBPROGRAM 
+1.1 SUBPROGRAM의 개요 
+1.2 SUBPROGRAM 작성 단계 
+1.3 PROCEDURE 생성 
+1.4 FUNCTION 생성 
+1.5 함수와 프로시저 비교 
+1.6 TRIGGER 
+부록A 
+A. ORACLE DATA DICTIONARY 
+1. ORACLE DATA DICTIONARY의 내용 
+2. ORACLE DATA DICTIONARY의 내용 조회 
+B. 실습용 테이블을 생성하는 SCRIPT 
+1. 실습용SCRIPT란 ? 
+2. 실습용 TABLE 생성 절차 
+3. 실습용 SCRIPT의 내용 
