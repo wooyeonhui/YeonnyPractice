@@ -1,0 +1,57 @@
+select substr('2017-02-03',1,4)||'년'
+||substr('2017-02-03',6,2)||'월'
+||substr('2017-02-03',9,2)||'일'
+as birthday
+from dual;
+
+select ename,
+
+to_char -- 어떤타입이던 문자열형태로 전환
+to_date -- 날짜모양으로 들어간 char
+to_number -- 숫자로 이루어지 char --> 수치형태로
+
+decode 함수 - 선택이 여러개일떄 그중 하나가 선택되렀을때에 대한 처리
+decode(필드, 값1, 처리1,
+             값2,처리2,
+             값3,처리3,
+             나머지처리)
+
+select ename, decode(deptno, 10,'총무부',
+                             20,'인사부',
+                             30,'영업1부',
+                             40,'영업2부',
+                             '부서할당안됨')
+                    부서명 from emp;
+-- 부서별로 인원이 몇명씩인지?
+select count(*) from emp where deptno=10
+union all
+select count(*) from emp where deptno=20
+union all
+select count(*) from emp where deptno=30
+union all
+select count(*) from emp where deptno=40;
+
+--group by
+select count(*) from emp
+group by deptno
+
+--equi 조인
+select ename, dname
+from emp, dept
+where emp.deptno=dept.deptno
+
+--NULL값이 없을 경우 출력을 하지 않는다
+select ename, dname, e.deptno
+from emp e, dept d
+where e.deptno=d.deptno
+
+--NULL값 처리-outer join
+(left outer, right outer, full outer)
+
+select ename, dname, e.deptno
+from emp e,dept d
+where e.deptno=d.deptno(+)
+
+select ename, dname, e.deptno
+from emp e
+left outer join dept d on e.deptno=d.deptno;
