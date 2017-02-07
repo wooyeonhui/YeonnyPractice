@@ -1,0 +1,1 @@
+select table_name from user_tab_columns where column_name='COUNTRY_NAME';

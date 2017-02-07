@@ -1,0 +1,167 @@
+Join 이란 특정 컬럼값을 기준으로 두개이상의 테이블을 결합하여 적절한 데이타를 가져오는 방식
+
+inner join : 두 테이블에 모두 존재하는 데이타에 대해서만 join을 한다
+             -오라클 표현식으로는 equi join이다
+
+outer join : 두 테이블 결합시 각자의 테이블에만 있는 고유의 데이타를 결합시키기 위해 사용한다
+             left outer join(젤 많이 사용) :  왼쪽 테이블 데이타 모두 출력
+             right outer join : 오른쪽 테이블 데이타 모두 출력
+             full outer join  : 양쪽 테이블 데이타 모두 출력(오라클엔 지원안한다)
+
+ANSI 표준 조인방식
+
+select ename, dname, sal
+from emp e
+inner join dept d on e.deptno=d.deptno
+/
+
+conn system/1234;
+alter user hr account unlock; //hr 계정 잠김 풀기
+alter user hr identified by 1234;
+conn hr/1234;
+
+문제1) hr계정에 속한 테이블 정보를 기술하기
+문제2) employees 테이블 구조 복사해서 붙여넣기
+문제3) employees 테이블과 departments 테이블을  join해서 first_name,salart,department_name을
+       모두 출력하세요
+문제4) employees, jobs 테이블
+       first_name,job이름 출력하기
+
+
+select first_name,job_title
+from employees a
+left outer join jobs b on a.job_id=b.job_id
+where a.job_id like '%CLERK';
+
+employees - 고용인
+departments - 부서명, lacation_id
+locations - 부서명,loaction_id
+countries
+
+select first_name,salary,department_name
+from employees a
+left outer join departments b on a.department_id=b.department_id
+left outer join locations c on b.locations_id=c.locations_id
+left outer join countries d on d.country_id=c.country_id
+where lower(d.country_name) like 'United Kingdom%';
+
+self join - 자기자신하고 조인하는 경우
+            emp테이블의 manager_id가 있음
+            자기 상사의 사원번호 이다
+
+            자기정보                  상사의 정보
+            emp a                    emp b
+            select a.ename 직원명,    b.ename 상사명
+            from emp a
+            left outer join emp b on a,manager_id = b.empno
+
+서브쿼리 : 쿼리내에 또 다른 쿼리를 둔다 이 쿼리가 먼저 실행된 결과를 가지고 다른 쿼리가 실행된다.
+          이를 서브쿼리라 한다.
+예를들어SCOTT와 같은 부서에 근무하는 사람들에 대한 정보를 보려고한다.
+1. SCOTT의 부서코드를 알아야 한다.
+2. SCOTT의 부서코드와 같은 코드를 갖는 사람들
+
+1. select deptno from emp where ename='SCOTT';
+
+2. select ename from emp where deptno=1번부서코드;
+
+select ename from emp where deptno =
+ (select deptno from emp where ename='SCOTT');
+
+ 서브쿼리의 실행결과가 단일행인경우와 다중행인 경우로 나눠진다
+
+ --부서이림 : 서브쿼리 사용해서
+ select ename,(select dname from dept b where a.deptno=b.deptno)
+ from emp a
+//join으로 대체 가능, join이 더 빠름
+
+ --
+select*from
+(
+  select ename, dname, sal, hiredate
+  from emp a
+  left outer join dept b on a.deptno=b.deptno
+) a
+
+--그룹함수가 들어가는 서브쿼리
+이름, 급여, 부서명, 부서별인원수,부서별급여평균
+
+select ename,sal,
+       (select dname from dept b where b.deptno=a.deptno)
+       부서명,
+       (select count(*) from emp b where b.deptno=a.deptno)
+       부서별인원수,
+       (select avg(sal) from emp b where b.deptno=a.deptno)
+       부서별평균급여
+from emp a;
+
+select ename, sal, dname,cnt, average
+from emp a
+left outer join dept b on a.deptno=b.deptno
+left outer join(
+   select deptno, count(*) cnt,avg(sal) average
+   from emp
+   group by deptno
+)c on b.deptno=c.deptno
+
+select deptno, count(*),avg(sal)
+from emp
+group by deptno;
+
+-- 쿼리 실행 결과가 다중행인경우에
+-- 각 부서별로 급여 최소를 받는 사람들
+select min(nvl(sal,0)) from emp group by deptno
+
+select ename
+from emp
+where sal (select min(nvl(sal,0))from emp group by deptno)
+
+->error
+single-row subquery returns more than one row
+
+in,any,all,exists
+
+select ename
+from emp
+where sal in(select min(nvl(sal,0))from emp group by deptno)
+
+부등호 any, all
+any - 일부분만 일치하면된다
+all - 모두 만족하는
+
+
+제약조건중 primary key는 테이블당 하나만 줄 수 있다.
+create table 테이블명
+(
+  컬럼명 타입 default 옵션 제약조건,
+  ....
+);
+
+create table TEST1
+(
+ ID number constraint PK_Test1 primary key,
+ TITLE varchar2(10),
+ CONTENTS varchar2(10),
+ DELYN char(1) default'N'
+);
+
+insert into test1(id,title,contents,delyn)
+values(1,'제목1','내용1','N');
+
+insert into test1 values(2,null,null,null);
+
+insert into test1(id,title,contents)
+values(3,'제목1','내용3');
+
+insert into test1(id,title,contents)
+values(3,'제목4','내용4');  //error
+
+select nvl(max(id),0)+1 from test1;
+
+insert into test1(id,title,contents)
+values((select nvl(max(id),0)+1 from test1),'제목4','내용4');
+
+insert into test1(id,title,contents)
+values(SEQ_TEST1.nexttval,'제목4','내용4');  
+
+select*from test1;
