@@ -1,0 +1,20 @@
+프로젝트명 : 톰캣 프로젝트 SpringWebIBatis
+
+1. lib 폴더에 jar파일들 다 가져다 놓고 프로젝트 설정하기
+
+2. 최소 3개의 xml 파일이 필요하다
+ IBatis-spring.xml - 스프링 환경설정 파일
+ applicationContext.xml - 디비관련 객체를 만들어야 하는 파일
+ web.xml - 웹 환경설정 파일
+
+1. DispatchServlet 이 모든 요청을 받으면
+2. url을 보고 어떤 Controller를 호출할지를 결정한다
+3. 그 Controller 객체가 Service 단을 통해서 Repository
+
+DispatcherServlet
+
+Controller -> Service -> Dao
+
+Controller - 서비스 여러개 소유 가능
+하나의 서비스 - 여러개의 Dao 소유 가능
+Dao - insert,update,delete 쿼리의 경우는 보통 테이블 하나
