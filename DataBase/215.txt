@@ -1,0 +1,54 @@
+-페이지 쿼리 만들기-
+
+select rownum, first_name
+from employees where rownum<=10;
+
+rownum은 테이블로부터 데이타를 하나씩 꺼내서 번호붙여주기
+10개 읽고 나면 더이상 안읽는다
+
+이렇게 사용못한다
+select rownum, first_name from employees where rownum>=11 and rownum<=20
+
+
+--모든 데이타에 rownum을 다 붙이기때문에 데이타건수가 많아지명 속도가 느려진다
+
+select * from
+(
+	select rownum as num, first_name from employees
+)
+ where num>=11 and num<=20
+
+-- 표준적인 페이징 쿼리
+select * from
+(
+	select rownum as num, first_name from employees
+	where rownum<=20
+)
+where num>=11
+/
+
+select * from
+(
+	select rownum as num, first_name
+                from
+	(
+		select first_name
+		from employees
+		--where 절이 와야한다
+		order by first_name asc
+	)
+	where rownum<=20
+)
+where num>=11
+/
+
+select *
+from
+(
+     select  first_name
+               ,last_name
+	       ,row_number() over (order by employee_id desc) as num
+	       ,ceil( row_number() over (order by employee_id desc) /10) as pg
+     from employees
+     --where 절
+ )where pg=2;

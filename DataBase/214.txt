@@ -1,0 +1,45 @@
+select rownum, ename from emp where rownum>=3 and rownum<=6;
+
+--rownum  을 사용할때는 항상 서브쿼리
+select * from
+(
+select rownum num, ename
+from emp
+)where num>=3 and num<=6
+
+
+-- 게시판의 경우 최근에 작성한 글이 먼저 불려와야 한다
+
+select * from
+(
+ select rownum num, A.*
+ from
+ (
+   select ename, hiredate
+   from emp
+   order by hiredate desc
+ )A
+)where num>=3 and num<=6
+
+
+-- row_number() over
+
+select * from
+(
+ select
+     A.*
+     , row_number() over(order by seq asc) as num
+     , ceil(row_number() over(order by seq desc)
+     /#{pagesize}-1) pg
+ from
+     emp A
+) where pg=1
+
+
+select * from
+(
+select A.*
+, row_number() over(order by empno desc) as num  --   새로운 일련번호, 정렬
+, ceil(row_number() over(order by empno desc)/3) as pg
+from emp A
+) where pg=1;
